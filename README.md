@@ -133,7 +133,7 @@ venv\Scripts\activate           # Windows
 ### 3. Install dependencies
 
 ```bash
-pip install -r requirements.txt
+Check Requirements Section
 ```
 
 ### 4. Download the dataset
