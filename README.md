@@ -10,7 +10,6 @@ This project does not use any pre-trained models or transfer learning. The entir
 
 - [Overview](#overview)
 - [Dataset](#dataset)
-- [Project Structure](#project-structure)
 - [Model Architecture](#model-architecture)
 - [Results](#results)
 - [Getting Started](#getting-started)
@@ -77,35 +76,6 @@ data/
 
 ---
 
-## Project Structure
-
-```
-covid19-xray-cnn/
-│
-├── covid19_custom_cnn.ipynb       # Main training notebook
-├── graphs.ipynb                   # Evaluation and visualisation code
-├── predict.ipynb                  # Single image inference
-│
-├── best_model.pt                  # Saved model weights (generated after training)
-│
-├── outputs/
-│   ├── graph_training_curves.png
-│   ├── graph_confusion_matrix_counts.png
-│   ├── graph_confusion_matrix_pct.png
-│   ├── graph_per_class_metrics.png
-│   ├── graph_class_distribution.png
-│   ├── graph_roc_curves.png
-│   ├── graph_confidence_distribution.png
-│   ├── graph_correct_vs_wrong.png
-│   └── single_prediction.png
-│
-├── data/                          # Dataset folder (not tracked by git)
-│
-├── requirements.txt
-└── README.md
-```
-
----
 
 ## Model Architecture
 
@@ -139,19 +109,8 @@ Output: (B, 4) logits
 ## Results
 
 > Results will vary depending on hardware, random seed, and number of epochs.  
-> The following are representative values from a full 20-epoch run.
-
-| Metric           | Score  |
-|------------------|--------|
-| Test Accuracy    | ~92%   |
-| Macro F1         | ~0.91  |
-| COVID F1         | ~0.94  |
-| Normal F1        | ~0.95  |
-| Lung Opacity F1  | ~0.88  |
-| Viral Pneumonia F1 | ~0.90 |
-
-ROC AUC scores across all classes are consistently above 0.97, indicating strong discrimination ability.
-
+run.
+> Current results give a 93% Test Accuracy with 98+ ROC.
 ---
 
 ## Getting Started
@@ -159,8 +118,8 @@ ROC AUC scores across all classes are consistently above 0.97, indicating strong
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/your-username/covid19-xray-cnn.git
-cd covid19-xray-cnn
+git clone https://github.com/Sanidhya-Tyagi/COVID-19-Radiography-CNN.git
+cd COVID-19-Radiography-CNN
 ```
 
 ### 2. Create a virtual environment
@@ -188,7 +147,7 @@ kaggle datasets download -d tawsifurrahman/covid19-radiography-database --unzip 
 ### 5. Open and run the notebook
 
 ```bash
-jupyter notebook covid19_custom_cnn.ipynb
+jupyter notebook main.ipynb
 ```
 
 Run all cells from top to bottom. Training will save `best_model.pt` automatically.
@@ -222,7 +181,7 @@ pip install torch torchvision numpy matplotlib seaborn scikit-learn Pillow tqdm 
 
 ### Training
 
-Open `covid19_custom_cnn.ipynb` and run all cells. Key parameters you can adjust at the top of the notebook:
+Open `main.ipynb` and run all cells. Key parameters you can adjust at the top of the notebook:
 
 | Parameter   | Default | Description                          |
 |-------------|---------|--------------------------------------|
