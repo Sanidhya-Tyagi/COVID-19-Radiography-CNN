@@ -1,0 +1,26 @@
+# Training hyperparameters — edit here instead of in the notebook
+model:
+  num_classes: 4
+  img_size: 128
+
+training:
+  batch_size: 32
+  num_epochs: 20
+  learning_rate: 0.001
+  dropout: 0.5
+
+data:
+  root: ./data/COVID-19_Radiography_Dataset
+  classes:
+    - COVID
+    - Normal
+    - Lung_Opacity
+    - Viral Pneumonia
+  train_split: 0.70
+  val_split:   0.15
+  test_split:  0.15
+  random_seed: 42
+
+paths:
+  best_model:  ./outputs/models/best_model.pt
+  plot_output: ./outputs/images/
